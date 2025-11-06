@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL ARSENAL | [TU MARCA] - MIDE TU FUERZA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <section id="gate" class="gate">
+        <div class="gate-content">
+            <svg class="gate-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"></path></svg>
+            <h1 class="gate-title">ADVERTENCIA</h1>
+            <p class="gate-text">EL PODER NO SE PIDE. SE TOMA.</p>
+            <div class="gate-actions">
+                <button id="gate-enter" class="btn btn-primary">DEMOSTRAR MI VALOR</button>
+                <a href="about:blank" class="btn btn-secondary">SOY DÉBIL</a>
+            </div>
+        </div>
+    </section>
+
+    <main id="main-content">
+        
+        <header id="hero" class="scroll-snap-section">
+            <div class="hero-container">
+                <nav class="navbar">
+                    <div class="logo">[TU LOGO]</div>
+                    <ul class="nav-links">
+                        <li><a href="#intro">Filosofía</a></li>
+                        <li><a href="#verdict">Tu Veredicto</a></li>
+                        <li><a href="#products">El Arsenal</a></li>
+                    </ul>
+                </nav>
+                <div class="hero-content">
+                    <h1 class="hero-title glitch-text" data-text="DOMINA.">WHERE THE</h1>
+                    <h1 class="hero-title glitch-text" data-text="DESTRUYE.">CRAZY PEOPLE.</h1>
+                    <h1 class="hero-title glitch-text" data-text="CONQUISTA.">MEET.</h1>
+                </div>
+            </div>
+        </header>
+
+        <section id="intro" class="section-dark scroll-snap-section reveal-fade">
+            <div class="container">
+                <h2 class="section-title">PARA DE QUEJARTE.</h2>
+                <p class="section-subtitle">Hicimos esto para destruir límites, no para superarlos. Si buscas motivación, vete. Si buscas poder, bienvenido.</p>
+            </div>
+        </section>
+
+        <section id="verdict" class="section-light scroll-snap-section reveal-fade">
+            <div class="container">
+                <h2 class="section-title">TU VEREDICTO</h2>
+                <p class="section-subtitle">No mientas. Los números no lo hacen. Elige tu nivel.</p>
+                
+                <div class="verdict-form">
+                    <div class="form-group">
+                        <label for="bench-press-range">SELECCIONA TU FUERZA (PRESS BANCA 1RM)</label>
+                        <select id="bench-press-range">
+                            <option value="none" selected>ELIGE TU CATEGORÍA...</option>
+                            <option value="P1">Menos de 80 KG</option>
+                            <option value="P2">80 KG - 139 KG</option>
+                            <option value="P3">140 KG o más</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="verdict-result" class="verdict-result-container hidden">
+                    <h3 id="verdict-title">TU VEREDICTO:</h3>
+                    <p id="verdict-message">...</p>
+                    <p id="verdict-recommendation">Tu arma asignada: <span class="product-name-rec"></span></p>
+                    <a href="#products" class="btn btn-secondary">VER MI ARMA</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="section-dark scroll-snap-section reveal-fade">
+            <div class="container">
+                <h2 class="section-title">EL ARSENAL.</h2>
+                <p class="section-subtitle">Elige el arma que te fue asignada. No intentes tomar la que no te pertenece.</p>
+
+                <div class="product-grid">
+                    
+                    <div class="product-card" data-product-id="P1">
+                        <div class="dignity-overlay">
+                            <span class="dignity-text">NO ES PARA TI</span>
+                        </div>
+                        <div class="product-image-container">
+                            <img src="Psycho.webp" alt="Pre-entreno 1">
+                        </div>
+                        <h3 class="product-name">PSYCHOTIC</h3>
+                        <p class="product-level">REQUERIMIENTO: &lt; 80KG PRESS BANCA</p>
+                        <p class="product-description">Para aquellos que apenas inician su camino hacia la dominación.</p>
+                        <button class="btn btn-primary buy-product-btn" data-product-id="P1">COMPRAR</button>
+                    </div>
+
+                    <div class="product-card" data-product-id="P2">
+                        <div class="dignity-overlay">
+                            <span class="dignity-text">NO ES PARA TI</span>
+                        </div>
+                        <div class="product-image-container">
+                            <img src="medusa.webp" alt="Pre-entreno 2">
+                        </div>
+                        <h3 class="product-name">MEDUSA</h3>
+                        <p class="product-level">REQUERIMIENTO: 80KG - 139KG PRESS BANCA</p>
+                        <p class="product-description">Cuando el entrenamiento es tu campo de batalla. Poder sostenido.</p>
+                        <button class="btn btn-primary buy-product-btn" data-product-id="P2">COMPRAR</button>
+                    </div>
+
+                    <div class="product-card" data-product-id="P3">
+                        <div class="dignity-overlay">
+                            <span class="dignity-text">NO ES PARA TI</span>
+                        </div>
+                        <div class="product-image-container">
+                            <img src="DMAA.png" alt="Pre-entreno 3">
+                        </div>
+                        <h3 class="product-name">DMAA</h3>
+                        <p class="product-level">REQUERIMIENTO: 140KG+ PRESS BANCA</p>
+                        <p class="product-description">La fuerza que derriba muros. Solo para la élite.</p>
+                        <button class="btn btn-primary buy-product-btn" data-product-id="P3">COMPRAR</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </main>
+
+</body>
+</html>
