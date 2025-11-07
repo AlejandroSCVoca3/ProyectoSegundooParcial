@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    // --- 1. LÓGICA DE LA PUERTA (GATE) ---
     const gate = document.getElementById("gate");
     const enterButton = document.getElementById("gate-enter");
     const mainContent = document.getElementById("main-content");
@@ -10,19 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
             gate.classList.add("hidden");
             setTimeout(() => {
                 mainContent.classList.add("visible");
-                // MODIFICADO: Devuelve el scroll a #main-content
                 mainContent.style.overflowY = 'scroll'; 
-            }, 500); // Sincronizado con la transición de clip-path
+            }, 500); 
         });
     }
 
-    // MODIFICADO: Ya no se necesita el control de overflow del body
-    if (!gate.classList.contains("hidden")) {
-        // El CSS maneja el overflow de #main-content (hidden por defecto)
-        // No es necesario JS aquí.
-    }
-
-    // --- 2. LÓGICA DE SCROLL-REVEAL (La que te gusta) ---
+    // --- 2. LÓGICA DE SCROLL-REVEAL (IntersectionObserver) ---
     const revealElements = document.querySelectorAll(".reveal-fade");
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -37,24 +28,17 @@ document.addEventListener("DOMContentLoaded", () => {
         revealObserver.observe(el);
     });
 
-    // --- 3. LÓGICA DEL VEREDICTO V5 (FILTRO POR OPCIONES) ---
-
-    // Elementos del formulario
+    // --- 3. LÓGICA DEL VEREDICTO (FILTRO POR OPCIONES) ---
     const benchSelect = document.getElementById("bench-press-range");
-
-    // Elementos de resultado
     const resultBox = document.getElementById("verdict-result");
     const resultMessage = document.getElementById("verdict-message");
     const recSpan = document.querySelector("#verdict-recommendation .product-name-rec");
-
-    // Todas las tarjetas de producto
     const productCards = document.querySelectorAll(".product-card");
 
-    // Nombres de productos
     const productNames = {
-        P1: "Novato Extremo",
-        P2: "Guerrero",
-        P3: "Bestia Absoluta"
+        P1: "PSYCHOTIC",
+        P2: "MEDUSA",
+        P3: "DMAA"
     };
 
     if (benchSelect) {
@@ -100,19 +84,25 @@ document.addEventListener("DOMContentLoaded", () => {
      */
     function updateProductGrid(recommendedID) {
         productCards.forEach(card => {
+            // Solo aplica la lógica de "digno" a los pre-entrenos (P1, P2, P3)
             const cardID = card.getAttribute('data-product-id');
-            
-            if (cardID === recommendedID) {
-                // Es el producto recomendado: quitar overlay
-                card.classList.remove("not-worthy");
-            } else {
-                // No es el producto: añadir overlay
-                card.classList.add("not-worthy");
+            if (cardID.startsWith("P")) { 
+                if (cardID === recommendedID) {
+                    // Es el producto recomendado: quitar overlay
+                    card.classList.remove("not-worthy");
+                } else {
+                    // No es el producto: añadir overlay
+                    card.classList.add("not-worthy");
+                }
             }
+            // Los productos de Ropa (R1, R2, R3) son ignorados y nunca se ocultan
         });
     }
     
-    // Ocultar todos los productos al inicio
+    // Ocultar todos los pre-entrenos al inicio
     updateProductGrid(null); // 'null' hará que todos sean 'not-worthy' al cargar
+
+    
+    // --- LÓGICA DEL CARRITO ELIMINADA ---
 
 });

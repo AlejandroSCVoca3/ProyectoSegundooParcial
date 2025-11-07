@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EL ARSENAL | [TU MARCA] - MIDE TU FUERZA</title>
+    <title>EL ARSENAL </title>
+    <link rel="icon" type="image/png" href="img/logo.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,76 +14,84 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-
+    <div id="video-background-wrapper">
+        <video id="bg-video" autoplay loop muted playsinline>
+            <source src="video.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+    </div>
     <section id="gate" class="gate">
         <div class="gate-content">
             <svg class="gate-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"></path></svg>
             <h1 class="gate-title">ADVERTENCIA</h1>
             <p class="gate-text">EL PODER NO SE PIDE. SE TOMA.</p>
             <div class="gate-actions">
-                <button id="gate-enter" class="btn btn-primary">DEMOSTRAR MI VALOR</button>
-                <a href="about:blank" class="btn btn-secondary">SOY DÉBIL</a>
+                <button id="gate-enter" class="btn btn-primary">ENTRAR</button>
+                <a href="about:blank" class="btn btn-secondary">REGRESAR</a>
             </div>
         </div>
     </section>
 
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="#hero">
+                    <img src="img/logo.png" alt="Logo de la Marca" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#products">Pre Entrenos</a></li>
+                <li><a href="#ropa">Ropa</a></li>
+            </ul>
+            </nav>
+    </header>
+
     <main id="main-content">
         
-        <header id="hero" class="scroll-snap-section">
-            <div class="hero-container">
-                <nav class="navbar">
-                    <div class="logo">[TU LOGO]</div>
-                    <ul class="nav-links">
-                        <li><a href="#intro">Filosofía</a></li>
-                        <li><a href="#verdict">Tu Veredicto</a></li>
-                        <li><a href="#products">El Arsenal</a></li>
-                    </ul>
-                </nav>
-                <div class="hero-content">
-                    <h1 class="hero-title glitch-text" data-text="DOMINA.">WHERE THE</h1>
-                    <h1 class="hero-title glitch-text" data-text="DESTRUYE.">CRAZY PEOPLE.</h1>
-                    <h1 class="hero-title glitch-text" data-text="CONQUISTA.">MEET.</h1>
-                </div>
+        <section id="hero" class="scroll-snap-section">
+            <div class="hero-content">
+                <h1 class="hero-title glitch-text" data-text="WHERE THE">WHERE THE</h1>
+                <h1 class="hero-title glitch-text" data-text="CRAZY PEOPLE.">CRAZY PEOPLE</h1>
+                <h1 class="hero-title glitch-text" data-text="MEET.">MEET</h1>
             </div>
-        </header>
+        </section>
 
         <section id="intro" class="section-dark scroll-snap-section reveal-fade">
             <div class="container">
-                <h2 class="section-title">PARA DE QUEJARTE.</h2>
-                <p class="section-subtitle">Hicimos esto para destruir límites, no para superarlos. Si buscas motivación, vete. Si buscas poder, bienvenido.</p>
+                <h2 class="section-title">PARA DE LLORAR.</h2>
+                <p class="section-subtitle">Hicimos esto para destruir límites, no para superarlos.</p>
+                <center><a href="#verdict" class="btn btn-primary">Mide tu Fuerza</a></center>
             </div>
         </section>
 
         <section id="verdict" class="section-light scroll-snap-section reveal-fade">
             <div class="container">
                 <h2 class="section-title">TU VEREDICTO</h2>
-                <p class="section-subtitle">No mientas. Los números no lo hacen. Elige tu nivel.</p>
-                
+                <p class="section-subtitle">No mientas</p>
                 <div class="verdict-form">
                     <div class="form-group">
-                        <label for="bench-press-range">SELECCIONA TU FUERZA (PRESS BANCA 1RM)</label>
+                        <label for="bench-press-range">SELECCIONA TU 1RM BP</label>
                         <select id="bench-press-range">
-                            <option value="none" selected>ELIGE TU CATEGORÍA...</option>
-                            <option value="P1">Menos de 80 KG</option>
-                            <option value="P2">80 KG - 139 KG</option>
+                            <option value="none" selected>SELECCIONA TU RM</option>
+                            <option value="P1">Menos   de   100 KG</option>
+                            <option value="P2">100 KG - 140 KG</option>
                             <option value="P3">140 KG o más</option>
                         </select>
                     </div>
                 </div>
-                
                 <div id="verdict-result" class="verdict-result-container hidden">
                     <h3 id="verdict-title">TU VEREDICTO:</h3>
                     <p id="verdict-message">...</p>
-                    <p id="verdict-recommendation">Tu arma asignada: <span class="product-name-rec"></span></p>
-                    <a href="#products" class="btn btn-secondary">VER MI ARMA</a>
+                    <p id="verdict-recommendation">Tu opcion asignada : <span class="product-name-rec"></span></p>
+                    <a href="#products" class="btn btn-primary">VER</a>
                 </div>
             </div>
         </section>
 
         <section id="products" class="section-dark scroll-snap-section reveal-fade">
             <div class="container">
-                <h2 class="section-title">EL ARSENAL.</h2>
-                <p class="section-subtitle">Elige el arma que te fue asignada. No intentes tomar la que no te pertenece.</p>
+                <h2 class="section-title">PRODUCTOS.</h2>
+                <p class="section-subtitle">Elige la opcion que te fue asignada. No intentes tomar la que no te pertenece.</p>
 
                 <div class="product-grid">
                     
@@ -91,12 +100,12 @@
                             <span class="dignity-text">NO ES PARA TI</span>
                         </div>
                         <div class="product-image-container">
-                            <img src="Psycho.webp" alt="Pre-entreno 1">
+                            <img src="img/Psycho.webp" alt="Pre-entreno 1">
                         </div>
                         <h3 class="product-name">PSYCHOTIC</h3>
-                        <p class="product-level">REQUERIMIENTO: &lt; 80KG PRESS BANCA</p>
+                        <p class="product-level">REQUERIMIENTO: &lt; 100KG PRESS BANCA</p>
                         <p class="product-description">Para aquellos que apenas inician su camino hacia la dominación.</p>
-                        <button class="btn btn-primary buy-product-btn" data-product-id="P1">COMPRAR</button>
+                        <a href="psychotic.html" class="btn btn-primary buy-product-btn" data-product-id="P1">COMPRAR</a>
                     </div>
 
                     <div class="product-card" data-product-id="P2">
@@ -104,12 +113,12 @@
                             <span class="dignity-text">NO ES PARA TI</span>
                         </div>
                         <div class="product-image-container">
-                            <img src="medusa.webp" alt="Pre-entreno 2">
+                            <img src="img/medusa.webp" alt="Pre-entreno 2">
                         </div>
                         <h3 class="product-name">MEDUSA</h3>
-                        <p class="product-level">REQUERIMIENTO: 80KG - 139KG PRESS BANCA</p>
+                        <p class="product-level">REQUERIMIENTO: 100KG - 139KG PRESS BANCA</p>
                         <p class="product-description">Cuando el entrenamiento es tu campo de batalla. Poder sostenido.</p>
-                        <button class="btn btn-primary buy-product-btn" data-product-id="P2">COMPRAR</button>
+                        <a href="medusa.html" class="btn btn-primary buy-product-btn" data-product-id="P2">COMPRAR</a>
                     </div>
 
                     <div class="product-card" data-product-id="P3">
@@ -117,18 +126,56 @@
                             <span class="dignity-text">NO ES PARA TI</span>
                         </div>
                         <div class="product-image-container">
-                            <img src="DMAA.png" alt="Pre-entreno 3">
+                            <img src="img/DMAA.png" alt="Pre-entreno 3">
                         </div>
                         <h3 class="product-name">DMAA</h3>
                         <p class="product-level">REQUERIMIENTO: 140KG+ PRESS BANCA</p>
                         <p class="product-description">La fuerza que derriba muros. Solo para la élite.</p>
-                        <button class="btn btn-primary buy-product-btn" data-product-id="P3">COMPRAR</button>
+                        <a href="dmaa.html" class="btn btn-primary buy-product-btn" data-product-id="P3">COMPRAR</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        </main>
+        <section id="ropa" class="section-light scroll-snap-section reveal-fade">
+            <div class="container">
+                <h2 class="section-title">EQUIPAMIENTO</h2>
+                <p class="section-subtitle">Vístete.</p>
+
+                <div class="product-grid">
+                    
+                    <div class="product-card" data-product-id="R1">
+                        <div class="product-image-container">
+                            <img src="img/pumpCover.webp" alt="Camiseta">
+                        </div>
+                        <h3 class="product-name">PUMP COVER</h3>
+                        <p class="product-level">COLECCIÓN: CONTROLLED INSANITY</p>
+                        <a href="pumpCover.html" class="btn btn-primary buy-product-btn" data-product-id="R1">COMPRAR</a>
+                    </div>
+
+                    <div class="product-card" data-product-id="R2">
+                        <div class="product-image-container">
+                            <img src="img/compresionShirt.webp" alt="Sudadera">
+                        </div>
+                        <h3 class="product-name">Compression Tank</h3>
+                        <p class="product-level">COLECCIÓN: CONTROLLED INSANITY</p>
+                        <a href="shirt.html" class="btn btn-primary buy-product-btn" data-product-id="R2">COMPRAR</a>
+                    </div>
+                    
+                    <div class="product-card" data-product-id="R3">
+                        <div class="product-image-container">
+                            <img src="img/hoddie.webp" alt="Pants">
+                        </div>
+                        <h3 class="product-name">Hoodie Beige Tech</h3>
+                        <p class="product-level">COLECCIÓN: CONTROLLED INSANITY</p>
+                        <a href="hoodie.html" class="btn btn-primary buy-product-btn" data-product-id="R3">COMPRAR</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
 
 </body>
 </html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CI - PUMP COVER</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --font-heading: 'Anton', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --color-bg-dark: #0A0A0A;
+            --color-bg-pure: #000000;
+            --color-text: #FFFFFF;
+            --color-accent: #B30000;
+            --color-accent-hover: #FF0000;
+            --color-disabled: #444444;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg-pure);
+            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1574680096145-f05b8716e3c1?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            padding: 40px 20px;
+        }
+        .product-detail-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--color-bg-dark);
+            border: 1px solid #222;
+            border-radius: 5px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .product-image-column {
+            background: #000;
+            display: grid;
+            place-items: center;
+            padding: 40px;
+        }
+        .product-image {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            object-fit: contain;
+        }
+        .product-info-column {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-text);
+            line-height: 1.1;
+        }
+        .product-tagline {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+        .product-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+        .info-section-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            color: var(--color-text);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        .benefits-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        .benefits-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .benefits-list li::before {
+            content: '►';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--color-accent);
+            font-size: 1.2rem;
+        }
+        /* Adaptado para ropa: Caja de Especificaciones */
+        .specs-box {
+            background: rgba(179, 0, 0, 0.1);
+            border: 2px solid var(--color-accent);
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+        .specs-box h4 {
+            font-family: var(--font-heading);
+            color: var(--color-accent);
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .specs-box p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .purchase-section {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+        .product-price {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--color-text);
+            margin-bottom: 20px;
+        }
+        .btn-buy {
+            display: inline-block;
+            width: 100%;
+            padding: 18px;
+            background: var(--color-accent);
+            color: var(--color-text);
+            text-decoration: none;
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            border: 2px solid var(--color-accent);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-buy:hover {
+            background: var(--color-accent-hover);
+            border-color: var(--color-accent-hover);
+        }
+        .btn-back {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--color-disabled);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-back:hover {
+            color: var(--color-text);
+            text-decoration: underline;
+        }
+        @media (max-width: 800px) {
+            .product-detail-container {
+                grid-template-columns: 1fr;
+            }
+            .product-image-column {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="product-detail-container">
+        
+        <div class="product-image-column">
+            <img src="img/pumpCover.webp" alt="Pump Cover de Controlled Insanity" class="product-image">
+        </div>
+
+        <div class="product-info-column">
+            <h1 class="product-title">CI Pump Cover</h1>
+            <span class="product-tagline">OCULTA LA BESTIA</span>
+
+            <p class="product-description">
+                El Pump Cover de Controlled Insanity es tu uniforme para el proceso. Fabricado con algodón pesado, su corte *oversize* está diseñado para ocultar tu físico mientras calientas, permitiéndote entrar en la zona. Es una declaración: el trabajo se hace en la oscuridad antes de revelar el resultado.
+            </p>
+
+            <h3 class="info-section-title">Especificaciones</h3>
+            <ul class="benefits-list">
+                <li>Corte Oversize Extremo</li>
+                <li>Algodón Pesado Premium (240g)</li>
+                <li>Gráficos de Alta Densidad</li>
+                <li>Cuello Reforzado y Caído</li>
+            </ul>
+
+            <div class="specs-box">
+                <h4>FILOSOFÍA DE DISEÑO</h4>
+                <p>
+                    Esto no es una playera ajustada. Está diseñada para ser grande, para moverse contigo y para ser retirada solo cuando el bombeo es innegable. Creada para el trabajo sucio antes de la revelación.
+                </p>
+            </div>
+
+            <div class="purchase-section">
+                <div class="product-price">$1,599.00 MXN</div>
+                <a href="#" class="btn-buy">Añadir al Carrito</a>
+            </div>
+
+            <a href="index.html" class="btn-back">← Volver a la selección</a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
