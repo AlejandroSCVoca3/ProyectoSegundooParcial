@@ -26,8 +26,9 @@
             <h1 class="gate-title">ADVERTENCIA</h1>
             <p class="gate-text">EL PODER NO SE PIDE. SE TOMA.</p>
             <div class="gate-actions">
-                <button id="gate-enter" class="btn btn-primary">ENTRAR</button>
-                <a href="about:blank" class="btn btn-secondary">REGRESAR</a>
+                <input type="password" id="passwordInput" placeholder="CLAVE DE ACCESO">
+                <button id="passwordButton" class="btn btn-primary">TOMAR PODER</button>
+                <p id="errorMensaje" class="gate-error hidden">CLAVE INCORRECTA.</p>
             </div>
         </div>
     </section>
@@ -74,7 +75,7 @@
                         <label for="bench-press-range">SELECCIONA TU 1RM BP</label>
                         <select id="bench-press-range">
                             <option value="none" selected>SELECCIONA TU RM</option>
-                            <option value="P1">Menos   de   100 KG</option>
+                            <option value="P1">Menos   de   100 KG</option>
                             <option value="P2">100 KG - 140 KG</option>
                             <option value="P3">140 KG o más</option>
                         </select>

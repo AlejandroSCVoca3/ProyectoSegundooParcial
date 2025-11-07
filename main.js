@@ -1,15 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
     const gate = document.getElementById("gate");
-    const enterButton = document.getElementById("gate-enter");
     const mainContent = document.getElementById("main-content");
+    const passwordInput = document.getElementById("passwordInput");
+    const passwordButton = document.getElementById("passwordButton");
+    const errorMensaje = document.getElementById("errorMensaje");
 
-    if (gate && enterButton && mainContent) {
-        enterButton.addEventListener("click", () => {
+    const passwordCorrecta = "123"; 
+
+    function verificarPassword() {
+        if (passwordInput.value === passwordCorrecta) {
             gate.classList.add("hidden");
+            errorMensaje.classList.add("hidden");
             setTimeout(() => {
                 mainContent.classList.add("visible");
                 mainContent.style.overflowY = 'scroll'; 
             }, 500); 
+        } else {
+            errorMensaje.classList.remove("hidden");
+            passwordInput.value = "";
+            passwordInput.focus();
+        }
+    }
+
+    if (passwordButton) {
+        passwordButton.addEventListener("click", verificarPassword);
+    }
+    
+    if (passwordInput) {
+        passwordInput.addEventListener("keyup", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                verificarPassword();
+            }
         });
     }
 
