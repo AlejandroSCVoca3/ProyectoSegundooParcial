@@ -67,7 +67,6 @@
             object-fit: contain;
         }
 
-        /* Columna de Información */
         .product-info-column {
             padding: 40px;
             display: flex;
@@ -120,7 +119,6 @@
             font-size: 1.1rem;
         }
 
-        /* Marcador de lista personalizado (estilo agresivo) */
         .benefits-list li::before {
             content: '►';
             position: absolute;
@@ -130,7 +128,6 @@
             font-size: 1.2rem;
         }
 
-        /* --- Caja de Advertencia (Importante para este producto) --- */
         .warning-box {
             background: rgba(179, 0, 0, 0.1);
             border: 2px solid var(--color-accent);
@@ -152,9 +149,8 @@
             line-height: 1.6;
         }
 
-        /* --- Sección de Compra --- */
         .purchase-section {
-            margin-top: auto; /* Empuja esta sección al fondo */
+            margin-top: auto;
             padding-top: 20px;
             border-top: 1px solid #333;
         }
@@ -166,7 +162,6 @@
             margin-bottom: 20px;
         }
 
-        /* Botón de compra (idéntico al de la página anterior) */
         .btn-buy {
             display: inline-block;
             width: 100%;
@@ -189,7 +184,6 @@
             border-color: var(--color-accent-hover);
         }
 
-        /* --- Botón de Volver (opcional) --- */
         .btn-back {
             display: inline-block;
             margin-top: 20px;
@@ -202,10 +196,8 @@
             text-decoration: underline;
         }
 
-        /* --- Diseño Responsivo --- */
         @media (max-width: 800px) {
             .product-detail-container {
-                /* Apila las columnas en móvil */
                 grid-template-columns: 1fr;
             }
 
